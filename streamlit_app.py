@@ -35,6 +35,9 @@ ingredients_list = st.multiselect(
     ,max_selections=5
 )
 
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+sf_df = st.dataframe(data = smoothiefroot_response.json(),use_container_width = true)
+
 if ingredients_list:
     # st.write(ingredients_list)
     # st.text(ingredients_list)
@@ -58,7 +61,6 @@ if ingredients_list:
         st.success('Your Smoothie is ordered!', icon="✅")
 
 
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response)
+
     
 
