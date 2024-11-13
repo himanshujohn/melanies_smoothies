@@ -36,7 +36,7 @@ ingredients_list = st.multiselect(
 )
 
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-sf_df = st.dataframe(data = smoothiefroot_response.json(),use_container_width = true)
+sf_df = st.dataframe(data = smoothiefroot_response.json())
 
 if ingredients_list:
     # st.write(ingredients_list)
