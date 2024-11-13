@@ -22,7 +22,7 @@ st.write(
 cnx = st.connection("snowflake")
 session = cnx.session()
 
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
 st.dataframe(data=my_dataframe, use_container_width=True)
 
 name_on_order = st.text_input("Name on smoothie: ")
@@ -46,7 +46,7 @@ if ingredients_list:
 
     st.write(ingredients_string)
 
-    my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
+    my_insert_stmt = """ insert into SMOOTHIES.PUBLIC.ORDERS(ingredients,name_on_order)
             values ('""" + ingredients_string + """','"""  + name_on_order +  """');"""
     st.write(my_insert_stmt)
     
